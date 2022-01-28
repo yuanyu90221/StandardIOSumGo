@@ -45,3 +45,14 @@ func ParseInt(input string) int {
 	return num
 }
 ```
+
+
+## test
+
+https://pkg.go.dev/github.com/rhysd/go-fakeio#section-readme
+
+## stdio test concept
+
+use os.Pipes
+
+https://eli.thegreenplace.net/2020/faking-stdin-and-stdout-in-go/
