@@ -9,6 +9,9 @@ import (
 	"strings"
 )
 
+const LineSeparator = '\n'
+const WordSeparator = " "
+
 func ReadAndWriteSum() string {
 	reader := bufio.NewReader(os.Stdin)
 	turns := readInt(reader)
@@ -16,13 +19,13 @@ func ReadAndWriteSum() string {
 	result := ""
 	for ; i < turns; i++ {
 		nums := readInts(reader)
-		result += fmt.Sprintf("%d\n", nums[0]+nums[1])
+		result += fmt.Sprintf("%d%c", nums[0]+nums[1], LineSeparator)
 	}
 	return result
 }
 
 func readLine(reader *bufio.Reader) string {
-	line, _ := reader.ReadString('\n')
+	line, _ := reader.ReadString(LineSeparator)
 	result := strings.TrimSpace(line)
 	return result
 }
@@ -34,7 +37,7 @@ func readInt(reader *bufio.Reader) int {
 
 func readInts(reader *bufio.Reader) []int {
 	line := readLine(reader)
-	lines := strings.Split(line, " ")
+	lines := strings.Split(line, WordSeparator)
 	nums := []int{}
 	for _, num := range lines {
 		nums = append(nums, parseInt(num))
