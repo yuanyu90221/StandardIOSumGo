@@ -10,27 +10,27 @@ import (
 
 func ReadAndWriteSum() {
 	reader := bufio.NewReader(os.Stdin)
-	turns := ReadInt(reader)
+	turns := readInt(reader)
 	i := 0
 	for ; i < turns; i++ {
-		nums := ReadInts(reader)
+		nums := readInts(reader)
 		fmt.Println(nums[0] + nums[1])
 	}
 }
 
-func ReadLine(reader *bufio.Reader) string {
+func readLine(reader *bufio.Reader) string {
 	line, _ := reader.ReadString('\n')
 	result := strings.TrimSpace(line)
 	return result
 }
 
-func ReadInt(reader *bufio.Reader) int {
-	line := ReadLine(reader)
+func readInt(reader *bufio.Reader) int {
+	line := readLine(reader)
 	return ParseInt(line)
 }
 
-func ReadInts(reader *bufio.Reader) []int {
-	line := ReadLine(reader)
+func readInts(reader *bufio.Reader) []int {
+	line := readLine(reader)
 	lines := strings.Split(line, " ")
 	nums := []int{}
 	for _, num := range lines {
