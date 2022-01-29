@@ -9,14 +9,16 @@ import (
 	"strings"
 )
 
-func ReadAndWriteSum() {
+func ReadAndWriteSum() string {
 	reader := bufio.NewReader(os.Stdin)
 	turns := readInt(reader)
 	i := 0
+	result := ""
 	for ; i < turns; i++ {
 		nums := readInts(reader)
-		fmt.Println(nums[0] + nums[1])
+		result += fmt.Sprintf("%d\n", nums[0]+nums[1])
 	}
+	return result
 }
 
 func readLine(reader *bufio.Reader) string {
