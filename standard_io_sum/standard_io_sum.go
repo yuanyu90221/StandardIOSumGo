@@ -26,7 +26,7 @@ func readLine(reader *bufio.Reader) string {
 
 func readInt(reader *bufio.Reader) int {
 	line := readLine(reader)
-	return ParseInt(line)
+	return parseInt(line)
 }
 
 func readInts(reader *bufio.Reader) []int {
@@ -34,12 +34,12 @@ func readInts(reader *bufio.Reader) []int {
 	lines := strings.Split(line, " ")
 	nums := []int{}
 	for _, num := range lines {
-		nums = append(nums, ParseInt(num))
+		nums = append(nums, parseInt(num))
 	}
 	return nums
 }
 
-func ParseInt(input string) int {
+func parseInt(input string) int {
 	num, _ := strconv.Atoi(input)
 	return num
 }
